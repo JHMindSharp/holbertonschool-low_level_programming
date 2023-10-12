@@ -1,4 +1,7 @@
-if [ -z "$CFILE" ]; then
-    echo "Error: CFILE environment variable is not set."
-    exit 1
-fi
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Bonjour, le monde !\n");
+    return 0;
+}
