@@ -18,13 +18,9 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	printf("The string Last digit of, followed by\n");
-	printf("%d, followed by\n", n);
-	printf("the string is, followed by\n");
-
 	lastDigit = n % 10;
 
-	printf("if the last digit of n is %d: the string and is ", lastDigit);
+	printf("The string Last digit of %d is %d and is", n, lastDigit);
 
 	if (lastDigit > 5)
 	{
