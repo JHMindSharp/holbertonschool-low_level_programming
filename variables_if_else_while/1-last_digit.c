@@ -21,6 +21,7 @@ int main(void)
 	printf("%d, followed by\n", n);
 	printf("the string is, followed by\n");
 
+
 	int lastDigit = n % 10;
 
 	if (lastDigit > 5)
