@@ -13,7 +13,7 @@
 int main(void)
 {
     int n;
-    int lastDigit; // Déclaration de la variable au début de la fonction
+    int lastDigit; /* Déclaration de la variable au début de la fonction */
 
     srand(time(0));
     n = rand() - RAND_MAX / 2;
@@ -22,7 +22,7 @@ int main(void)
     printf("%d, followed by\n", n);
     printf("the string is, followed by\n");
 
-    lastDigit = n % 10; // Assignation de la valeur à la variable
+    lastDigit = n % 10; /* Assignation de la valeur à la variable */
 
     if (lastDigit > 5)
     {
