@@ -10,16 +10,16 @@
  */
 int main(void)
 {
-	int character;
+	int number;
 
-	for (character = '9'; character >= '0'; character--)
+	for (number = 0; number < 16; number++)
 	{
-		putchar(character);
-	}
+		if (number < 10)
 
-	for (character = 'f'; character >= 'a'; character--)
-	{
-		putchar(character);
+			putchar('0' + number);
+
+		else
+			putchar('a' + (number - 10));
 	}
 
 	putchar('\n');
