@@ -1,10 +1,14 @@
 #include <stdio.h>
-/**
- * Prints the alphabet in lowercase.
- *
- * This function prints the lowercase alphabet from 'a' to 'z'
- */
 
+
+/**
+ * PrintsAlphabetInLowercase -  prints the alphabet in lowercase,
+ * followed by a new line.
+ *
+ * Description: This function iterates through
+ * the lowercase alphabet ('a' to 'z')
+ * and prints letter to the standard output, followed by a newline character.
+ */
 void PrintsAlphabetInLowercase(void)
 {
 	char letter;
@@ -18,12 +22,13 @@ void PrintsAlphabetInLowercase(void)
 }
 
 /**
- * The main function void.
+ * main - prints the alphabet in lowercase.
  *
- * This is the entry point of the program. It calls the
- * PrintsAlphabetInLowercase function and returns 0.
+ * Description: This is the entry point of the program.
+ * function to print the alphabet in lowercase and returns 0 to indicate
+ * successful execution.
  *
- * @return 0 indicating successful program execution.
+ * Return: (0) indicating successful program execution.
  */
 	int main(void)
 {
