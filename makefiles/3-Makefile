@@ -3,7 +3,7 @@ SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
-TEMP_FILES = *~ school
+TEMP_FILES = *~
 
 all: $(NAME)
 
@@ -16,7 +16,7 @@ $(NAME): $(OBJ)
 .PHONY: clean oclean fclean re
 
 clean:
-	$(RM) $(TEMP_FILES)
+	$(RM) $(TEMP_FILES) $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
