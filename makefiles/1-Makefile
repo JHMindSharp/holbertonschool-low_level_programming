@@ -1,15 +1,13 @@
 
-CC := gcc
-SRC := main.c school.c
+CC = gcc
+SRC = main.c school.c
+EXEC = school
 
-all: school
+all: clean $(EXEC)
 
-school: $(SRC)
-	@$(CC) $^ -o $@
-	@echo '$(CC) $(SRC) -o $@'
-
-.PHONY: clean
+$(EXEC): $(SRC)
+	@$(CC) $(SRC) -o $@
 
 clean:
-	@rm -f school
+	rm -f $(EXEC)
 
