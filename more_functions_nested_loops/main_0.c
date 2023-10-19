@@ -1,5 +1,8 @@
 #include "main.h"
 
+/* Prototype declaration */
+void print_triangle(int size);
+
 /**
  * main - check the code for Holberton School students.
  *
