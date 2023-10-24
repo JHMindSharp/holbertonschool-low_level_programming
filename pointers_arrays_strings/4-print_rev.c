@@ -6,12 +6,9 @@
  */
 void print_rev(char *s)
 {
-	int longueur = strlen(str);
-
-	for (int i = longueur - 1; i >= i--)
+	for (int i = str - 1; i >= 0; i--)
 	{
-		putchar(str[i]);
+		putchar(s[i]);
 	}
-
 	putchar('\n');
 }
