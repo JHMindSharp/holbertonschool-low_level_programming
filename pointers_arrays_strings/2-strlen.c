@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * _strlen - Function that returns the length of a string.
+ * @s: Pointer strings of char.
+ *
+ * Return: The size of the strings.
+ */
 int _strlen(char *s)
 {
 	int len = 0;
@@ -8,6 +14,6 @@ int _strlen(char *s)
 	{
 		len++;
 	}
-	return len;
+	return (len);
 }
 
