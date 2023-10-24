@@ -24,18 +24,4 @@ void print_rev(char *s)
 	}
 	putchar('\n');
 }
-/**
- * main - The function print str pointer.
- *
- * Return: 0 is the value.
- */
-int main(void)
-{
-	char *str;
-
-	str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-	print_rev(str);
-
-	return (0);
-}
 
