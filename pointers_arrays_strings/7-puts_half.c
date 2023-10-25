@@ -6,18 +6,18 @@
  */
 void puts_half(char *str)
 {
-	int length = 0;
-	int i;
-
 	if (str)
 	{
+		int length = 0;
+		int start_index;
+		int i;
 
 		while (str[length] != '\0')
 		{
 			length++;
 		}
-
-		int start_index = (length + 1) / 2;
+		
+		start_index = (length + 1) / 2;
 
 		for (i = start_index; str[i] != '\0'; i++)
 		{
