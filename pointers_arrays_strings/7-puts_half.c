@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * puts_half - Imprime la moitié d'une chaîne, suivie d'une nouvelle ligne.
@@ -16,12 +17,12 @@ void puts_half(char *str)
 		{
 			length++;
 		}
-		
+
 		start_index = (length + 1) / 2;
 
 		for (i = start_index; str[i] != '\0'; i++)
 		{
-		       putchar(str[i]);
+			putchar(str[i]);
 		}
 
 		putchar('\n');
