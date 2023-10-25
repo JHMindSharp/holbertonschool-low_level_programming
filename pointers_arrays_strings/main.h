@@ -13,5 +13,7 @@ void puts2(char *str);
 void puts_half(char *str);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
+int _putchar(char *c);
+char *_strcat(char *dest, char *src);
 
 #endif /* MAIN_H */
