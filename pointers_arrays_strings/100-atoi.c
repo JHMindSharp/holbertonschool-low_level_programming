@@ -8,8 +8,8 @@
  */
 int _atoi(char *s)
 {
-	long sign = 1;
-	long result = 0;
+	int sign = 1;
+	int result = 0;
 	int i = 0;
 	int is_digit = 0;
 
