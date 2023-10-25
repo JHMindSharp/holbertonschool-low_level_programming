@@ -8,7 +8,6 @@ void puts_half(char *str)
 {
 	int length = 0;
 	int i;
-	int start_index;
 
 	if (str)
 	{
@@ -18,7 +17,7 @@ void puts_half(char *str)
 			length++;
 		}
 
-		start_index = (length + 1) / 2;
+		int start_index = (length + 1) / 2;
 
 		for (i = start_index; str[i] != '\0'; i++)
 		{
