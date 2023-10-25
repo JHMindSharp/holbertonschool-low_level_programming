@@ -22,10 +22,10 @@ void puts_half(char *str)
 
 		for (i = start_index; str[i] != '\0'; i++)
 		{
-			write(1, &str[i], 1);
+		       putchar(str[i]);
 		}
 
-		write(1, '\n', 1);
+		putchar('\n');
 	}
 }
 
