@@ -6,10 +6,10 @@
  *
  * Return: The value int convert.
  */
-int _atoi(char *s)
+long _atoi(char *s)
 {
-	int sign = 1;
-	int result = 0;
+	long sign = 1;
+	long result = 0;
 	int i = 0;
 	int is_digit = 0;
 
