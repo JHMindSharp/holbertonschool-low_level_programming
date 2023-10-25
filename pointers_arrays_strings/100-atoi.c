@@ -6,7 +6,7 @@
  *
  * Return: The value int convert.
  */
-long _atoi(char *s)
+int _atoi(char *s)
 {
 	long sign = 1;
 	long result = 0;
