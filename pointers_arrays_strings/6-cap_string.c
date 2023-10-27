@@ -39,8 +39,6 @@ char *cap_string(char *str)
 		}
 	}
 
-	fprintf(stderr, "[Anything]\n");
-
 	return (str);
 }
 
