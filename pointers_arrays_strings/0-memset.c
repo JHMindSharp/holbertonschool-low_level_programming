@@ -1,21 +1,23 @@
-#include "main.h"
+#include <stddef.h>
 
 /**
- * _memset - Remplit la mémoire avec un octet constant.
- * @s: Le pointeur vers la mémoire à remplir.
- * @b: L'octet constant pour remplir la mémoire.
- * @n: Le nombre d'octets à remplir.
+ * _memset - Fills the first n bytes of a memory area with the constant byte b.
  *
- * Return: Un pointeur vers la mémoire remplie.
+ * @s: A pointer to the memory area to be filled.
+ * @b: The constant byte used for filling.
+ * @n: The number of bytes to fill.
+ *
+ * Return: A pointer to the memory area s.
  */
 char *_memset(char *s, char b, unsigned int n)
 {
+	char *p = s;
 
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
+	/* Loop through the memory area and fill each byte with the constant byte. */
+	for (unsigned int i = 0; i < n; i++)
 	{
-		s[i] = b;
+		*p = b;
+		p++;
 	}
 
 	return (s);
