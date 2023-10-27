@@ -1,3 +1,6 @@
+
+#include <stdio.h>
+
 /**
  * cap_string - Capitalize the first letter of each word in a string
  * @str: Input string
