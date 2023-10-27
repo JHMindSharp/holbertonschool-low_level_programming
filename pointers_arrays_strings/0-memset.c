@@ -13,11 +13,9 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	char *p = s;
 
-	/* Loop through the memory area and fill each byte with the constant byte. */
-	for (unsigned int i = 0; i < n; i++)
+	while (n--)
 	{
-		*p = b;
-		p++;
+		*p++ = b;
 	}
 
 	return (s);
