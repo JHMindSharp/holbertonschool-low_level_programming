@@ -1,5 +1,5 @@
 /**
- * cap_string - Capitalize all words in a string
+ * cap_string - Capitalize the first letter of each word in a string
  * @str: Input string
  *
  * Return: Pointer to the modified string
@@ -7,7 +7,7 @@
 char *cap_string(char *str)
 {
 	char separators[] = " \t\n,;.!?\"(){}";
-	int i,j;
+	int i, j;
 	int capitalize_next = 1;
 
 	for (i = 0; str[i] != '\0'; i++)
