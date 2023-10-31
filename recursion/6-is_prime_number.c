@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * is_prime_number - Function that returns 1 if the input
- * integer is a prime number,
+ * is_prime_number - Function that returns 1 if the input integer
+ * is a prime number,
  * otherwise return 0.
  * @n: The source value.
  *
- * Return: When return 0, the value is not a primal number and
- * when return 1 it is.
+ * Return: 1 if 'n' is a prime number, 0 otherwise.
  */
 int is_prime_number(int n)
 {
@@ -35,3 +34,4 @@ int is_prime_number(int n)
 	}
 	return (1);
 }
+
