@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 /**
- *  My_name_is - That function prints the name of file.
- *  @argc: The value will be checked.
- *  @argv: The name of the file.
+ *  main - That function prints the name of file.
  *
- *  return: return everytime 0.
+ *  @argc: The argument count.
+ *  @argv: An array of strings containing command -line arguments.
+ *
+ *  Return: Always returns 0.
  */
 int main(int argc, char *argv[])
 {
