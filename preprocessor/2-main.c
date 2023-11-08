@@ -4,7 +4,8 @@
  * main - this function will print the name of the source file.
  *
  * description: same than main.
- * return: return 0 everytime.
+ *
+ * Return: Return everytime 0.
  */
 int main(void)
 {
