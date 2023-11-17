@@ -1,6 +1,7 @@
+#include "variadic_functions.h"
+#include <stddef.h>
 #include <stdio.h>
 #include <stdarg.h>
-#include "variadic_function.h"
 
 /**
  * print_all - prints anything based on the format provided
@@ -15,31 +16,19 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0;
+	unsigned int i = 0;
 	char *str;
-	char c;
 
 	va_start(args, format);
 
 	while (format && format[i])
 	{
 		if (format[i] == 'c')
-		{
-			c = va_arg(args, int);
-			printf("%c", c);
-		}
+			printf("%c", va_arg(args, int));
 		else if (format[i] == 'i')
-		{
-			int integer = va_arg(args, int);
-
-			printf("%d", integer);
-		}
+			printf("%d", va_arg(args, int));
 		else if (format[i] == 'f')
-		{
-			double dbl = va_arg(args, double);
-
-			printf("%f", dbl);
-		}
+			printf("%f", (float)va_arg(args, double));
 		else if (format[i] == 's')
 		{
 			str = va_arg(args, char *);
@@ -48,6 +37,10 @@ void print_all(const char * const format, ...)
 			else
 				printf("%s", str);
 		}
+
+		if (format[i + 1] != '\0' && (format[i] == 'c' || format[i] == 'i' ||
+		    format[i] == 'f' || format[i] == 's'))
+			printf(", ");
 
 		i++;
 	}
