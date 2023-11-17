@@ -1,83 +1,96 @@
-#include "variadic_functions.h"
 #include <stdio.h>
+#include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * print_char - Prints a character from va_list
- * @args: va_list to print from
+ * printf_char - printfs a char from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-void print_char(va_list args)
+void printf_char(va_list list)
 {
-	printf("%c", va_arg(args, int));
+	printf("%c", (char) va_arg(list, int));
 }
 
 /**
- * print_int - Prints an integer from va_list
- * @args: va_list to print from
+ * printf_int - printfs an int from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-void print_int(va_list args)
+void printf_int(va_list list)
 {
-	printf("%d", va_arg(args, int));
+	printf("%d", va_arg(list, int));
 }
 
 /**
- * print_float - Prints a float from va_list
- * @args: va_list to print from
+ * printf_float - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-void print_float(va_list args)
+void printf_float(va_list list)
 {
-	printf("%f", (float)va_arg(args, double));
+	printf("%f", (float) va_arg(list, double));
 }
 
 /**
- * print_string - Prints a string from va_list
- * @args: va_list to print from
+ * printf_string - printfs a string from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-void print_string(va_list args)
+void printf_string(va_list list)
 {
-	char *str = va_arg(args, char *);
+	char *str = va_arg(list, char*);
 
-	if (str == NULL)
-		printf("(nil)");
-	else
+	while (str != NULL)
+	{
 		printf("%s", str);
+		return;
+	}
+	printf("(nil)");
 }
 
+
 /**
- * print_all - Prints various types given a format string for the arguments
- * @format: String containing type information for args
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	int i = 0;
-	int printed = 0;
-	char *sep = "";
-	char *types = "cifs";
-	void (*print_fn[4])(va_list) = {print_char, print_int,
-		print_float, print_string};
+	const char *ptr;
+	va_list list;
+	funckey key[4] = { {printf_char, 'c'}, {printf_int, 'i'},
+			   {printf_float, 'f'}, {printf_string, 's'} };
+	int keyind = 0, notfirst = 0;
 
-	va_start(args, format);
-	while (format && format[i])
+	ptr = format;
+	va_start(list, format);
+	while (format != NULL && *ptr)
 	{
-		int j = 0;
-
-		while (types[j])
+		if (key[keyind].spec == *ptr)
 		{
-			if (format[i] == types[j])
-			{
-				printf("%s", sep);
-				print_fn[j](args);
-				sep = ", ";
-				printed = 1;
-			}
-			j++;
+			if (notfirst)
+				printf(", ");
+			notfirst = 1;
+			key[keyind].f(list);
+			ptr++;
+			keyind = -1;
 		}
-		i++;
+		keyind++;
+		ptr += keyind / 4;
+		keyind %= 4;
 	}
-	va_end(args);
-	if (!printed)
-		printf("\n");
-	else
-		printf("\n");
-}
+	printf("\n");
 
+	va_end(list);
+}

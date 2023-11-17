@@ -3,6 +3,11 @@
 
 #include <stdarg.h>
 
+typedef struct funckey {
+	void (*f)(va_list);
+	char spec;
+} funckey;
+
 void print_all(const char * const format, ...);
 void printf_char(va_list list);
 void printf_int(va_list list);
