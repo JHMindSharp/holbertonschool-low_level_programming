@@ -1,5 +1,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
+#include <stdio.h>
+#include <stddef.h>
 
 /**
  * print_all - Prints anything
@@ -13,7 +15,6 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	char *separator = "";
 	char *str;
 
 	va_start(args, format);
