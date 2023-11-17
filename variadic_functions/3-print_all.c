@@ -1,53 +1,40 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-#include <stdarg.h>
 
 /**
- * printf_char - printfs a char from var args
- *
+ * print_char - Prints a character from va_list
  * @list: va_list to print from
- *
- * Return: void
  */
-void printf_char(va_list list)
+void print_char(va_list list)
 {
-	printf("%c", (char)va_arg(list, int));
+	printf("%c", va_arg(list, int));
 }
 
 /**
- * printf_int - printfs an int from var args
- *
+ * print_int - Prints an integer from va_list
  * @list: va_list to print from
- *
- * Return: void
  */
-void printf_int(va_list list)
+void print_int(va_list list)
 {
 	printf("%d", va_arg(list, int));
 }
 
 /**
- * printf_float - printfs a float from var args
- *
+ * print_float - Prints a float from va_list
  * @list: va_list to print from
- *
- * Return: void
  */
-void printf_float(va_list list)
+void print_float(va_list list)
 {
 	printf("%f", (float)va_arg(list, double));
 }
 
 /**
- * printf_string - printfs a string from var args
- *
+ * print_string - Prints a string from va_list
  * @list: va_list to print from
- *
- * Return: void
  */
-void printf_string(va_list list)
+void print_string(va_list list)
 {
-	char *str = va_arg(list, char*);
+	char *str = va_arg(list, char *);
 
 	if (str == NULL)
 		printf("(nil)");
@@ -56,48 +43,36 @@ void printf_string(va_list list)
 }
 
 /**
- * print_all - prints various types given a format string for the arguments
- *
- * @format: string containing type information for args
- *
- * Return: void
+ * print_all - Prints various types given a format string for the arguments
+ * @format: String containing type information for args
  */
 void print_all(const char * const format, ...)
 {
-	const char *ptr;
-	va_list list;
-	funckey key[4] = {
-		{ 'c', printf_char },
-		{ 'i', printf_int },
-		{ 'f', printf_float },
-		{ 's', printf_string }
-	};
-	int i, notfirst = 0;
+	va_list args;
+	int i = 0;
+	int j = 0;
+	char *separator = "";
+	char *types = "cifs";
+	void (*print_fn[4])(va_list) = {print_char, print_int, print_float,
+		print_string};
 
-	ptr = format;
-	va_start(list, format);
-
-	while (format != NULL && *ptr)
+	va_start(args, format);
+	while (format && format[i])
 	{
-		i = 0;
-		while (i < 4)
+		j = 0;
+		while (types[j])
 		{
-			if (key[i].spec == *ptr)
+			if (types[j] == format[i])
 			{
-				if (notfirst)
-					printf(", ");
-				notfirst = 1;
-				key[i].f(list);
-				break;
+				printf("%s", separator);
+				print_fn[j](args);
+				separator = ", ";
 			}
-			i++;
+			j++;
 		}
-		ptr++;
+		i++;
 	}
-
 	printf("\n");
-	va_end(list);
+	va_end(args);
 }
-
-/* Add other function implementations below */
 

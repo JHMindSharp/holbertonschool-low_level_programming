@@ -2,17 +2,6 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
-#include <stdio.h>
-/**
- * struct funckey - Struct funckey
- * @spec: The format specifier
- * @f: The function associated
- */
-typedef struct funckey
-{
-	char spec;
-	void (*f)(va_list);
-} funckey;
 
 void print_all(const char * const format, ...);
 void printf_char(va_list list);
