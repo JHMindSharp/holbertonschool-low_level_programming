@@ -2,11 +2,22 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
+/**
+ * struct form - Associates a specifier with a corresponding printing function
+ * @specifier: The specifier character ('c', 'i', 'f', 's')
+ * @func: The function pointer to the appropriate printing function
+ *
+ * Description: This structure holds a specifier character and a
+ * function pointer.
+ *              It associates each specifier with its corresponding
+ *              printing function.
+ */
+typedef struct form
+{
+	char specifier;
+	void (*func)(va_list);
+} form_t;
 
-typedef struct funckey {
-	void (*f)(va_list);
-	char spec;
-} funckey;
 
 void print_all(const char * const format, ...);
 void printf_char(va_list list);
