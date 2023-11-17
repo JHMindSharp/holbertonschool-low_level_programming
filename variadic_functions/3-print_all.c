@@ -3,9 +3,9 @@
 #include <stdarg.h>
 
 /**
- * print_char - Print a character
- * @separator: Separator to be printed before the character
- * @c: Character to print
+ * print_char - Prints a character
+ * @separator: The separator string
+ * @c: The character to print
  */
 void print_char(const char *separator, char c)
 {
@@ -13,9 +13,9 @@ void print_char(const char *separator, char c)
 }
 
 /**
- * print_int - Print an integer
- * @separator: Separator to be printed before the integer
- * @num: Integer to print
+ * print_int - Prints an integer
+ * @separator: The separator string
+ * @num: The integer to print
  */
 void print_int(const char *separator, int num)
 {
@@ -23,9 +23,9 @@ void print_int(const char *separator, int num)
 }
 
 /**
- * print_float - Print a float
- * @separator: Separator to be printed before the float
- * @f: Float to print
+ * print_float - Prints a float
+ * @separator: The separator string
+ * @f: The float to print
  */
 void print_float(const char *separator, float f)
 {
@@ -33,9 +33,9 @@ void print_float(const char *separator, float f)
 }
 
 /**
- * print_string - Print a string or (nil) if NULL
- * @separator: Separator to be printed before the string
- * @str: String to print
+ * print_string - Prints a string or (nil) if NULL
+ * @separator: The separator string
+ * @str: The string to print
  */
 void print_string(const char *separator, char *str)
 {
