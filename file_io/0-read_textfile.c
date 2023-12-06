@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * read_textfile - Reads a text file and prints it to the POSIX standard output
@@ -11,7 +12,8 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file_descriptor, bytes_read, bytes_written;
+	int file_descriptor;
+	ssize_t bytes_read, bytes_written;
 	char buffer[1024];
 
 	if (filename == NULL)
