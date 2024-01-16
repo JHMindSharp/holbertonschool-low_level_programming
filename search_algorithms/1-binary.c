@@ -33,7 +33,6 @@ int binary_search(int *array, size_t size, int value)
 
 	return (-1);
 }
-
 /**
  * print_array - Prints an array of integers
  * @array: The array to be printed
@@ -42,12 +41,14 @@ int binary_search(int *array, size_t size, int value)
  */
 void print_array(const int *array, size_t left, size_t right)
 {
-	printf("Searching in array: ");
-	for (size_t i = left; i <= right; i++)
-	{
-		printf("%d", array[i]);
-		if (i < right)
-			printf(", ");
-	}
-	printf("\n");
+    size_t i;
+
+    printf("Searching in array: ");
+    for (i = left; i <= right; i++)
+    {
+        printf("%d", array[i]);
+        if (i < right)
+            printf(", ");
+    }
+    printf("\n");
 }
